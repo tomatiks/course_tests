@@ -1,0 +1,20 @@
+
+from itertools import *
+n = int(input())
+s = input()
+x = list(map(int, s.split()))[:n]
+
+fin = []
+#eval = []
+days = list(enumerate(x))
+
+for day1, day2 in combinations(days,2):
+
+    temp = abs(day1[1]-day2[1])
+    span = abs(day1[0]-day2[0])-1
+    if temp <= 5:
+        fin.append(span)
+        #eval.append((day1[1],day2[1]))
+
+
+print(min(fin, default=-1))
